@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Create Account | EcoCycle Intelligence</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="auth-page">
+
+<!-- =========================================
+     NAVBAR
+========================================= -->
+
+<header class="navbar">
+
+    <div class="logo">
+        EcoCycle<span> Intelligence</span>
+    </div>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="index.html#how-it-works">How It Works</a>
+        <a href="index.html#about">About</a>
+    </nav>
+
+</header>
+
+
+<!-- =========================================
+     REGISTER
+========================================= -->
+
+<main class="auth-container">
+
+    <div class="auth-card">
+
+        <div class="auth-icon">
+            ♻️
+        </div>
+
+        <h1>
+            Create Your Account
+        </h1>
+
+        <p class="auth-subtitle">
+            Start making smarter decisions for your electronics.
+        </p>
+
+
+        <form id="registerForm">
+
+            <!-- Name -->
+
+            <div class="form-group">
+
+                <label for="name">
+                    Full Name
+                </label>
+
+                <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    placeholder="Enter your full name"
+                    required
+                >
+
+            </div>
+
+
+            <!-- Email -->
+
+            <div class="form-group">
+
+                <label for="email">
+                    Email Address
+                </label>
+
+                <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    placeholder="Enter your email"
+                    required
+                >
+
+            </div>
+
+
+            <!-- Phone -->
+
+            <div class="form-group">
+
+                <label for="phone">
+                    Phone Number
+                </label>
+
+                <input
+                    type="tel"
+                    id="phone"
+                    name="phone"
+                    placeholder="Enter your phone number"
+                    pattern="[0-9]{10}"
+                    maxlength="10"
+                    required
+                >
+
+            </div>
+
+
+            <!-- Password -->
+
+            <div class="form-group">
+
+                <label for="password">
+                    Password
+                </label>
+
+                <input
+                    type="password"
+                    id="password"
+                    name="password"
+                    placeholder="Create a password"
+                    minlength="6"
+                    required
+                >
+
+            </div>
+
+
+            <!-- Confirm Password -->
+
+            <div class="form-group">
+
+                <label for="confirmPassword">
+                    Confirm Password
+                </label>
+
+                <input
+                    type="password"
+                    id="confirmPassword"
+                    name="confirmPassword"
+                    placeholder="Re-enter your password"
+                    minlength="6"
+                    required
+                >
+
+            </div>
+
+
+            <button
+                type="submit"
+                class="auth-button"
+                id="registerButton">
+
+                Create Account
+
+            </button>
+
+        </form>
+
+
+        <!-- Message -->
+
+        <div
+            id="registerMessage"
+            class="auth-message">
+        </div>
+
+
+        <div class="auth-divider">
+            <span>OR</span>
+        </div>
+
+
+        <p class="register-text">
+
+            Already have an account?
+
+            <a href="login.html">
+                Login
+            </a>
+
+        </p>
+
+
+        <a
+            href="index.html"
+            class="back-home">
+
+            ← Back to Home
+
+        </a>
+
+    </div>
+
+</main>
+
+
+<!-- =========================================
+     FOOTER
+========================================= -->
+
+<footer>
+
+    <div class="footer-logo">
+        EcoCycle Intelligence
+    </div>
+
+    <p>
+        Building a smarter and more sustainable
+        approach to electronic waste.
+    </p>
+
+    <p class="copyright">
+        © 2026 EcoCycle Intelligence.
+        All rights reserved.
+    </p>
+
+</footer>
+
+
+<script src="js/register.js"></script>
+
+</body>
+
+</html>

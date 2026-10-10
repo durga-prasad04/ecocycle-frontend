@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Assessment History | EcoCycle Intelligence</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="dashboard-page">
+
+<!-- =========================================
+     NAVBAR
+========================================= -->
+
+<header class="navbar dashboard-navbar">
+
+    <div class="logo">
+        EcoCycle<span> Intelligence</span>
+    </div>
+
+    <nav>
+        <a href="dashboard.html">Dashboard</a>
+        <a href="assessment.html">Assessment</a>
+        <a href="history.html" class="active">History</a>
+        <a href="centers.html">Centers</a>
+        <a href="#" id="logoutButton">Logout</a>
+    </nav>
+
+</header>
+
+
+<!-- =========================================
+     HISTORY PAGE
+========================================= -->
+
+<main class="history-container">
+
+    <section class="history-header">
+
+        <p class="history-label">
+            DEVICE HISTORY
+        </p>
+
+        <h1>
+            Your Assessment History
+        </h1>
+
+        <p>
+            Review the electronic devices you have assessed
+            and the recommendations provided by EcoCycle.
+        </p>
+
+    </section>
+
+
+    <!-- =====================================
+         HISTORY CONTENT
+    ====================================== -->
+
+    <section class="history-card">
+
+        <div class="history-card-header">
+
+            <div>
+                <h2>Previous Assessments</h2>
+
+                <p>
+                    Your recent device assessments are shown below.
+                </p>
+            </div>
+
+            <a href="assessment.html"
+               class="primary-action-button">
+                + New Assessment
+            </a>
+
+        </div>
+
+
+        <!-- Loading -->
+
+        <div id="historyLoading"
+             class="history-message">
+
+            Loading your assessment history...
+
+        </div>
+
+
+        <!-- Empty -->
+
+        <div id="historyEmpty"
+             class="history-message"
+             style="display: none;">
+
+            <div class="empty-icon">📋</div>
+
+            <h3>
+                No Assessments Yet
+            </h3>
+
+            <p>
+                You haven't assessed any electronic devices yet.
+            </p>
+
+            <a href="assessment.html"
+               class="primary-action-button">
+                Start Your First Assessment
+            </a>
+
+        </div>
+
+
+        <!-- Assessment List -->
+
+        <div id="historyList"
+             class="history-list"
+             style="display: none;">
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<!-- =========================================
+     FOOTER
+========================================= -->
+
+<footer>
+
+    <div class="footer-logo">
+        EcoCycle Intelligence
+    </div>
+
+    <p>
+        Building a smarter and more sustainable
+        approach to electronic waste.
+    </p>
+
+    <p class="copyright">
+        © 2026 EcoCycle Intelligence.
+        All rights reserved.
+    </p>
+
+</footer>
+
+
+<script src="js/history.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Eco Centers | EcoCycle Intelligence</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="dashboard-page">
+
+<!-- =========================================
+     NAVBAR
+========================================= -->
+
+<header class="navbar dashboard-navbar">
+
+    <div class="logo">
+        EcoCycle<span> Intelligence</span>
+    </div>
+
+    <nav>
+        <a href="dashboard.html">Dashboard</a>
+        <a href="assessment.html">Assessment</a>
+        <a href="history.html">History</a>
+        <a href="centers.html" class="active">Centers</a>
+        <a href="#" id="logoutButton">Logout</a>
+    </nav>
+
+</header>
+
+
+<!-- =========================================
+     CENTERS PAGE
+========================================= -->
+
+<main class="centers-container">
+
+    <section class="centers-header">
+
+        <p class="centers-label">
+            ECO SUPPORT NETWORK
+        </p>
+
+        <h1>
+            Find the Right Center
+        </h1>
+
+        <p>
+            Find repair, recycling and donation centers
+            that can help give your electronics a better
+            next life.
+        </p>
+
+    </section>
+
+
+    <!-- =====================================
+         FILTERS
+    ====================================== -->
+
+    <section class="center-filters">
+
+        <div class="filter-group">
+
+            <label for="centerType">
+                Center Type
+            </label>
+
+            <select id="centerType">
+
+                <option value="ALL">
+                    All Centers
+                </option>
+
+                <option value="REPAIR">
+                    Repair
+                </option>
+
+                <option value="RECYCLING">
+                    Recycling
+                </option>
+
+                <option value="DONATION">
+                    Donation
+                </option>
+
+            </select>
+
+        </div>
+
+
+        <div class="filter-group">
+
+            <label for="centerCity">
+                City
+            </label>
+
+            <input
+                type="text"
+                id="centerCity"
+                placeholder="Enter city"
+            >
+
+        </div>
+
+
+        <button
+            type="button"
+            id="searchCentersButton"
+            class="primary-action-button">
+
+            Search Centers
+
+        </button>
+
+    </section>
+
+
+    <!-- =====================================
+         LOADING
+    ====================================== -->
+
+    <div
+        id="centersLoading"
+        class="centers-message">
+
+        Loading centers...
+
+    </div>
+
+
+    <!-- =====================================
+         EMPTY
+    ====================================== -->
+
+    <div
+        id="centersEmpty"
+        class="centers-message"
+        style="display: none;">
+
+        <div class="empty-icon">
+            📍
+        </div>
+
+        <h3>
+            No Centers Found
+        </h3>
+
+        <p>
+            Try changing your center type or city.
+        </p>
+
+    </div>
+
+
+    <!-- =====================================
+         CENTER LIST
+    ====================================== -->
+
+    <section
+        id="centersList"
+        class="centers-grid"
+        style="display: none;">
+
+    </section>
+
+</main>
+
+
+<!-- =========================================
+     FOOTER
+========================================= -->
+
+<footer>
+
+    <div class="footer-logo">
+        EcoCycle Intelligence
+    </div>
+
+    <p>
+        Building a smarter and more sustainable
+        approach to electronic waste.
+    </p>
+
+    <p class="copyright">
+        © 2026 EcoCycle Intelligence.
+        All rights reserved.
+    </p>
+
+</footer>
+
+
+<script src="js/centers.js"></script>
+
+</body>
+
+</html>

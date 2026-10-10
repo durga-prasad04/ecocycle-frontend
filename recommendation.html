@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Recommendation | EcoCycle Intelligence</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="recommendation-page">
+
+<header class="navbar">
+
+    <div class="logo">
+        EcoCycle<span> Intelligence</span>
+    </div>
+
+    <nav>
+        <a href="dashboard.html">Dashboard</a>
+        <a href="assessment.html">Assessment</a>
+        <a href="history.html">History</a>
+        <a href="centers.html">Centers</a>
+
+        <button id="logoutButton" class="nav-logout">
+            Logout
+        </button>
+    </nav>
+
+</header>
+
+
+<main class="recommendation-container">
+
+    <!-- PAGE HEADER -->
+
+    <section class="recommendation-header">
+
+        <p class="recommendation-label">
+            ECOCYCLE SMART ANALYSIS
+        </p>
+
+        <h1>
+            Your Device Recommendation
+        </h1>
+
+        <p>
+            Based on the information you provided,
+            EcoCycle has analyzed your device and selected
+            the most suitable next step.
+        </p>
+
+    </section>
+
+
+    <!-- RESULT CARD -->
+
+    <section class="recommendation-result-card">
+
+        <div class="result-icon" id="resultIcon">
+            ♻️
+        </div>
+
+        <p class="result-label">
+            RECOMMENDED ACTION
+        </p>
+
+        <h2 id="recommendationTitle">
+            Analyzing...
+        </h2>
+
+        <p id="recommendationReason" class="recommendation-reason">
+            Please wait while we load your recommendation.
+        </p>
+
+    </section>
+
+
+    <!-- SCORE SECTION -->
+
+    <section class="recommendation-card">
+
+        <div class="recommendation-card-header">
+
+            <div>
+                <p class="card-label">
+                    DECISION ANALYSIS
+                </p>
+
+                <h2>
+                    Recommendation Scores
+                </h2>
+            </div>
+
+            <span class="large-icon">
+                📊
+            </span>
+
+        </div>
+
+
+        <div class="score-list">
+
+            <div class="score-row">
+
+                <div class="score-name">
+                    🔧 Repair
+                </div>
+
+                <div class="score-bar">
+                    <div
+                        id="repairScoreBar"
+                        class="score-fill">
+                    </div>
+                </div>
+
+                <span id="repairScore">
+                    0
+                </span>
+
+            </div>
+
+
+            <div class="score-row">
+
+                <div class="score-name">
+                    🔄 Reuse
+                </div>
+
+                <div class="score-bar">
+                    <div
+                        id="reuseScoreBar"
+                        class="score-fill">
+                    </div>
+                </div>
+
+                <span id="reuseScore">
+                    0
+                </span>
+
+            </div>
+
+
+            <div class="score-row">
+
+                <div class="score-name">
+                    🤝 Donate
+                </div>
+
+                <div class="score-bar">
+                    <div
+                        id="donateScoreBar"
+                        class="score-fill">
+                    </div>
+                </div>
+
+                <span id="donateScore">
+                    0
+                </span>
+
+            </div>
+
+
+            <div class="score-row">
+
+                <div class="score-name">
+                    💰 Sell
+                </div>
+
+                <div class="score-bar">
+                    <div
+                        id="sellScoreBar"
+                        class="score-fill">
+                    </div>
+                </div>
+
+                <span id="sellScore">
+                    0
+                </span>
+
+            </div>
+
+
+            <div class="score-row">
+
+                <div class="score-name">
+                    ♻️ Recycle
+                </div>
+
+                <div class="score-bar">
+                    <div
+                        id="recycleScoreBar"
+                        class="score-fill">
+                    </div>
+                </div>
+
+                <span id="recycleScore">
+                    0
+                </span>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ENVIRONMENTAL IMPACT -->
+
+    <section class="recommendation-card">
+
+        <div class="recommendation-card-header">
+
+            <div>
+                <p class="card-label">
+                    ENVIRONMENTAL IMPACT
+                </p>
+
+                <h2>
+                    Your Positive Impact
+                </h2>
+            </div>
+
+            <span class="large-icon">
+                🌱
+            </span>
+
+        </div>
+
+
+        <div class="impact-grid">
+
+            <div class="impact-item">
+
+                <span class="impact-icon">
+                    ♻️
+                </span>
+
+                <div>
+                    <h3 id="wasteImpact">
+                        0 kg
+                    </h3>
+
+                    <p>
+                        Estimated E-Waste Impact
+                    </p>
+                </div>
+
+            </div>
+
+
+            <div class="impact-item">
+
+                <span class="impact-icon">
+                    🌱
+                </span>
+
+                <div>
+                    <h3 id="lifeExtension">
+                        0 years
+                    </h3>
+
+                    <p>
+                        Estimated Useful-Life Extension
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ACTION BUTTONS -->
+
+    <section class="recommendation-actions">
+
+        <a
+            href="assessment.html"
+            class="secondary-action-button">
+
+            ← Assess Another Device
+
+        </a>
+
+
+        <a
+            href="dashboard.html"
+            class="primary-action-button">
+
+            Go to Dashboard →
+
+        </a>
+
+    </section>
+
+</main>
+
+
+<footer>
+
+    <div class="footer-logo">
+        EcoCycle Intelligence
+    </div>
+
+    <p>
+        Building a smarter and more sustainable approach
+        to electronic waste.
+    </p>
+
+    <p class="copyright">
+        © 2026 EcoCycle Intelligence.
+        All rights reserved.
+    </p>
+
+</footer>
+
+
+<script src="js/recommendation.js"></script>
+
+</body>
+</html>

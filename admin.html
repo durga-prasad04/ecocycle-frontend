@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Admin Dashboard | EcoCycle Intelligence</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="dashboard-page">
+
+<!-- =========================================
+     NAVBAR
+========================================= -->
+
+<header class="navbar dashboard-navbar">
+
+    <div class="logo">
+        EcoCycle<span> Intelligence</span>
+    </div>
+
+    <nav>
+        <a href="admin.html" class="active">Admin Dashboard</a>
+        <a href="dashboard.html">User Dashboard</a>
+        <a href="centers.html">Centers</a>
+        <a href="#" id="logoutButton">Logout</a>
+    </nav>
+
+</header>
+
+
+<!-- =========================================
+     ADMIN DASHBOARD
+========================================= -->
+
+<main class="admin-container">
+
+    <section class="admin-header">
+
+        <p class="admin-label">
+            ADMINISTRATION
+        </p>
+
+        <h1>
+            EcoCycle Admin Dashboard
+        </h1>
+
+        <p>
+            Monitor users, devices and the overall
+            EcoCycle platform.
+        </p>
+
+    </section>
+
+
+    <!-- =====================================
+         STATISTICS
+    ====================================== -->
+
+    <section class="admin-stats">
+
+        <div class="admin-stat-card">
+
+            <div class="admin-stat-icon">
+                👥
+            </div>
+
+            <div>
+                <span>
+                    Total Users
+                </span>
+
+                <strong id="totalUsers">
+                    0
+                </strong>
+            </div>
+
+        </div>
+
+
+        <div class="admin-stat-card">
+
+            <div class="admin-stat-icon">
+                💻
+            </div>
+
+            <div>
+                <span>
+                    Devices Assessed
+                </span>
+
+                <strong id="totalDevices">
+                    0
+                </strong>
+            </div>
+
+        </div>
+
+
+        <div class="admin-stat-card">
+
+            <div class="admin-stat-icon">
+                ♻️
+            </div>
+
+            <div>
+                <span>
+                    Recycled Devices
+                </span>
+
+                <strong id="recycledDevices">
+                    0
+                </strong>
+            </div>
+
+        </div>
+
+
+        <div class="admin-stat-card">
+
+            <div class="admin-stat-icon">
+                🌱
+            </div>
+
+            <div>
+                <span>
+                    E-Waste Diverted
+                </span>
+
+                <strong id="totalWaste">
+                    0 kg
+                </strong>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================
+         RECOMMENDATION ANALYTICS
+    ====================================== -->
+
+    <section class="admin-section">
+
+        <div class="admin-section-header">
+
+            <div>
+                <h2>
+                    Recommendation Analytics
+                </h2>
+
+                <p>
+                    Distribution of recommendations generated
+                    by the EcoCycle decision engine.
+                </p>
+            </div>
+
+        </div>
+
+
+        <div class="admin-stats">
+
+            <!-- REPAIR -->
+
+            <div class="admin-stat-card">
+
+                <div class="admin-stat-icon">
+                    🔧
+                </div>
+
+                <div>
+                    <span>
+                        Repair
+                    </span>
+
+                    <strong id="repairCount">
+                        0
+                    </strong>
+                </div>
+
+            </div>
+
+
+            <!-- REUSE -->
+
+            <div class="admin-stat-card">
+
+                <div class="admin-stat-icon">
+                    🔄
+                </div>
+
+                <div>
+                    <span>
+                        Reuse
+                    </span>
+
+                    <strong id="reuseCount">
+                        0
+                    </strong>
+                </div>
+
+            </div>
+
+
+            <!-- DONATE -->
+
+            <div class="admin-stat-card">
+
+                <div class="admin-stat-icon">
+                    🤝
+                </div>
+
+                <div>
+                    <span>
+                        Donate
+                    </span>
+
+                    <strong id="donateCount">
+                        0
+                    </strong>
+                </div>
+
+            </div>
+
+
+            <!-- SELL -->
+
+            <div class="admin-stat-card">
+
+                <div class="admin-stat-icon">
+                    💰
+                </div>
+
+                <div>
+                    <span>
+                        Sell
+                    </span>
+
+                    <strong id="sellCount">
+                        0
+                    </strong>
+                </div>
+
+            </div>
+
+
+            <!-- RECYCLE -->
+
+            <div class="admin-stat-card">
+
+                <div class="admin-stat-icon">
+                    ♻️
+                </div>
+
+                <div>
+                    <span>
+                        Recycle
+                    </span>
+
+                    <strong id="recycleCount">
+                        0
+                    </strong>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+<!-- =====================================
+     RECOMMENDATION DISTRIBUTION
+====================================== -->
+
+<section class="admin-section">
+
+    <div class="admin-section-header">
+
+        <div>
+            <h2>
+                Recommendation Distribution
+            </h2>
+
+            <p>
+                Overview of decisions generated by the
+                EcoCycle recommendation engine.
+            </p>
+        </div>
+
+    </div>
+
+
+    <div class="recommendation-chart">
+
+        <div class="chart-row">
+
+            <div class="chart-label">
+                🔧 Repair
+            </div>
+
+            <div class="chart-track">
+                <div
+                    id="repairBar"
+                    class="chart-bar repair-bar"
+                    style="width: 0%;">
+                </div>
+            </div>
+
+            <strong id="repairChartCount">
+                0
+            </strong>
+
+        </div>
+
+
+        <div class="chart-row">
+
+            <div class="chart-label">
+                🔄 Reuse
+            </div>
+
+            <div class="chart-track">
+                <div
+                    id="reuseBar"
+                    class="chart-bar reuse-bar"
+                    style="width: 0%;">
+                </div>
+            </div>
+
+            <strong id="reuseChartCount">
+                0
+            </strong>
+
+        </div>
+
+
+        <div class="chart-row">
+
+            <div class="chart-label">
+                🤝 Donate
+            </div>
+
+            <div class="chart-track">
+                <div
+                    id="donateBar"
+                    class="chart-bar donate-bar"
+                    style="width: 0%;">
+                </div>
+            </div>
+
+            <strong id="donateChartCount">
+                0
+            </strong>
+
+        </div>
+
+
+        <div class="chart-row">
+
+            <div class="chart-label">
+                💰 Sell
+            </div>
+
+            <div class="chart-track">
+                <div
+                    id="sellBar"
+                    class="chart-bar sell-bar"
+                    style="width: 0%;">
+                </div>
+            </div>
+
+            <strong id="sellChartCount">
+                0
+            </strong>
+
+        </div>
+
+
+        <div class="chart-row">
+
+            <div class="chart-label">
+                ♻️ Recycle
+            </div>
+
+            <div class="chart-track">
+                <div
+                    id="recycleBar"
+                    class="chart-bar recycle-bar"
+                    style="width: 0%;">
+                </div>
+            </div>
+
+            <strong id="recycleChartCount">
+                0
+            </strong>
+
+        </div>
+
+    </div>
+
+</section>
+    <!-- =====================================
+         USERS
+    ====================================== -->
+
+    <section class="admin-section">
+
+        <div class="admin-section-header">
+
+            <div>
+                <h2>
+                    Registered Users
+                </h2>
+
+                <p>
+                    Users currently registered in EcoCycle.
+                </p>
+            </div>
+
+        </div>
+
+
+        <div
+            id="usersLoading"
+            class="admin-message">
+
+            Loading users...
+
+        </div>
+
+
+        <div
+            id="usersTableContainer"
+            class="admin-table-container"
+            style="display: none;">
+
+            <table class="admin-table">
+
+                <thead>
+
+                    <tr>
+
+                        <th>
+                            ID
+                        </th>
+
+                        <th>
+                            Name
+                        </th>
+
+                        <th>
+                            Email
+                        </th>
+
+                        <th>
+                            Phone
+                        </th>
+
+                        <th>
+                            Role
+                        </th>
+
+                        <th>
+                            Action
+                        </th>
+
+                    </tr>
+
+                </thead>
+
+                <tbody id="usersTableBody">
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================
+         DEVICES
+    ====================================== -->
+
+    <section class="admin-section">
+
+        <div class="admin-section-header">
+
+            <div>
+                <h2>
+                    Assessed Devices
+                </h2>
+
+                <p>
+                    Devices submitted for assessment.
+                </p>
+            </div>
+
+        </div>
+
+
+        <div
+            id="devicesLoading"
+            class="admin-message">
+
+            Loading devices...
+
+        </div>
+
+
+        <div
+            id="devicesTableContainer"
+            class="admin-table-container"
+            style="display: none;">
+
+            <table class="admin-table">
+
+                <thead>
+
+                    <tr>
+
+                        <th>
+                            ID
+                        </th>
+
+                        <th>
+                            Device
+                        </th>
+
+                        <th>
+                            Brand
+                        </th>
+
+                        <th>
+                            Condition
+                        </th>
+
+                        <th>
+                            User
+                        </th>
+
+                        <th>
+                            Action
+                        </th>
+
+                    </tr>
+
+                </thead>
+
+                <tbody id="devicesTableBody">
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<!-- =========================================
+     FOOTER
+========================================= -->
+
+<footer>
+
+    <div class="footer-logo">
+        EcoCycle Intelligence
+    </div>
+
+    <p>
+        Building a smarter and more sustainable
+        approach to electronic waste.
+    </p>
+
+    <p class="copyright">
+        © 2026 EcoCycle Intelligence.
+        All rights reserved.
+    </p>
+
+</footer>
+
+
+<script src="js/admin.js"></script>
+
+</body>
+
+</html>

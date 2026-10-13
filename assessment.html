@@ -1,6 +1,6 @@
+
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,370 +11,273 @@
 <body class="assessment-page">
 
 <header class="navbar">
-
-    <div class="logo">
-        EcoCycle<span> Intelligence</span>
-    </div>
-
+    <div class="logo">EcoCycle<span> Intelligence</span></div>
     <nav>
         <a href="dashboard.html">Dashboard</a>
         <a href="assessment.html">Assessment</a>
         <a href="history.html">History</a>
         <a href="centers.html">Centers</a>
-        <button id="logoutButton" class="nav-logout">Logout</button>
+        <button type="button" id="logoutButton" class="nav-logout">Logout</button>
     </nav>
-
 </header>
-
 
 <main class="assessment-container">
 
-    <!-- PAGE HEADER -->
-
     <section class="assessment-header">
-
-        <p class="assessment-label">
-            ECOCYCLE DEVICE ASSESSMENT
-        </p>
-
+        <p class="assessment-label">ECOCYCLE DEVICE ASSESSMENT</p>
         <h1>Tell Us About Your Device</h1>
-
         <p>
-            Provide a few details about your electronic device.
-            EcoCycle will analyze the information and recommend
-            the most sustainable next step.
+            Describe your electronic device and the problem you noticed.
+            You do not need technical knowledge to complete this assessment.
         </p>
-
     </section>
 
-
-    <!-- ASSESSMENT FORM -->
-
     <section class="assessment-card">
-
         <form id="assessmentForm">
 
-
             <!-- DEVICE INFORMATION -->
-
             <div class="form-section">
-
                 <div class="form-section-title">
-
                     <span>📱</span>
-
                     <div>
                         <h2>Device Information</h2>
                         <p>Basic information about your electronic device.</p>
                     </div>
-
                 </div>
 
-
                 <div class="form-grid">
-
                     <div class="form-group">
                         <label for="deviceName">Device Name *</label>
-
                         <input
                             type="text"
                             id="deviceName"
+                            name="deviceName"
                             placeholder="Example: Laptop"
                             required
                         >
                     </div>
 
-
                     <div class="form-group">
-                        <label for="brand">Brand *</label>
-
+                        <label for="brand">Brand</label>
                         <input
                             type="text"
                             id="brand"
+                            name="brand"
                             placeholder="Example: HP"
-                            required
                         >
                     </div>
 
-
                     <div class="form-group">
-                        <label for="model">Model</label>
-
+                        <label for="model">Model (if known)</label>
                         <input
                             type="text"
                             id="model"
+                            name="model"
                             placeholder="Example: Pavilion 15"
                         >
                     </div>
 
-
                     <div class="form-group">
                         <label for="categoryId">Device Category *</label>
-
-                        <select id="categoryId" required>
-
-                            <option value="">
-                                Select Category
-                            </option>
-
-                            <option value="1">
-                                Laptop
-                            </option>
-
+                        <select id="categoryId" name="categoryId" required>
+                            <option value="">Select Category</option>
+                            <option value="1">Laptop</option>
+                            <option value="2">Mobile Phone</option>
+                            <option value="3">Desktop Computer</option>
+                            <option value="4">Television</option>
+                            <option value="5">Printer</option>
+                            <option value="6">Camera</option>
+                            <option value="7">Gaming Console</option>
+                            <option value="8">Tablet</option>
+                            <option value="9">Smartwatch</option>
+                            <option value="10">Other Electronics</option>
                         </select>
-
                     </div>
-
                 </div>
-
             </div>
 
-
             <!-- DEVICE CONDITION -->
-
             <div class="form-section">
-
                 <div class="form-section-title">
-
                     <span>🔧</span>
-
                     <div>
                         <h2>Device Condition</h2>
-                        <p>
-                            Tell us about the current physical and working condition.
-                        </p>
+                        <p>Select what you observe. Do not guess the internal fault.</p>
                     </div>
-
                 </div>
 
-
                 <div class="form-grid">
-
                     <div class="form-group">
-                        <label for="ageYears">
-                            Device Age (Years) *
-                        </label>
-
+                        <label for="ageYears">Device Age (Years)</label>
                         <input
                             type="number"
                             id="ageYears"
+                            name="ageYears"
                             min="0"
                             max="50"
-                            placeholder="Example: 3"
-                            required
+                            step="0.1"
+                            placeholder="Leave blank if unknown"
                         >
+                        <small>Optional. Enter an approximate age if known.</small>
                     </div>
-
 
                     <div class="form-group">
-                        <label for="condition">
-                            Current Condition *
-                        </label>
-
-                        <select id="condition" required>
-
-                            <option value="">
-                                Select Condition
-                            </option>
-
-                            <option value="EXCELLENT">
-                                Excellent
-                            </option>
-
-                            <option value="GOOD">
-                                Good
-                            </option>
-
-                            <option value="FAIR">
-                                Fair
-                            </option>
-
-                            <option value="POOR">
-                                Poor
-                            </option>
-
-                            <option value="DAMAGED">
-                                Damaged
-                            </option>
-
+                        <label for="condition">Overall Condition *</label>
+                        <select id="condition" name="condition" required>
+                            <option value="">Select Condition</option>
+                            <option value="EXCELLENT">Excellent</option>
+                            <option value="GOOD">Good</option>
+                            <option value="FAIR">Fair</option>
+                            <option value="POOR">Poor</option>
+                            <option value="DAMAGED">Damaged</option>
+                            <option value="NOT_WORKING">Not working</option>
+                            <option value="UNKNOWN">Not sure</option>
                         </select>
-
                     </div>
-
 
                     <div class="form-group">
                         <label for="expectedRemainingLife">
-                            Expected Remaining Life (Years) *
+                            Expected Remaining Life (Years)
                         </label>
-
                         <input
                             type="number"
                             id="expectedRemainingLife"
+                            name="expectedRemainingLife"
                             min="0"
                             max="30"
-                            placeholder="Example: 2"
-                            required
+                            step="0.5"
+                            placeholder="Leave blank if unknown"
                         >
+                        <small>Optional. Leave blank if you cannot estimate it.</small>
                     </div>
-
                 </div>
-
             </div>
 
-
-            <!-- VALUE AND REPAIR INFORMATION -->
-
+            <!-- USER DESCRIPTION -->
             <div class="form-section">
-
                 <div class="form-section-title">
-
-                    <span>💰</span>
-
+                    <span>📝</span>
                     <div>
-                        <h2>Value & Repair Information</h2>
-
-                        <p>
-                            These values help EcoCycle determine the best option.
-                        </p>
+                        <h2>Describe Your Device's Problem</h2>
+                        <p>Explain the issue in your own words.</p>
                     </div>
-
                 </div>
 
+                <div class="form-group">
+                    <label for="problemDescription">
+                        What happened to your device?
+                    </label>
+                    <textarea
+                        id="problemDescription"
+                        name="problemDescription"
+                        rows="5"
+                        maxlength="2000"
+                        placeholder="Example: My laptop is about one year old. It suddenly stopped working and will not turn on. There is no visible external damage. I do not know the internal fault."
+                    ></textarea>
+                    <small>
+                        Include symptoms, when the problem started, and visible damage.
+                        You can say you do not know the exact fault.
+                    </small>
+                </div>
+            </div>
+
+            <!-- VALUE AND REPAIR INFORMATION -->
+            <div class="form-section">
+                <div class="form-section-title">
+                    <span>💰</span>
+                    <div>
+                        <h2>Value &amp; Repair Information</h2>
+                        <p>Enter values only when you know them.</p>
+                    </div>
+                </div>
 
                 <div class="form-grid">
-
                     <div class="form-group">
-
-                        <label for="purchasePrice">
-                            Original Purchase Price (₹) *
-                        </label>
-
+                        <label for="purchasePrice">Original Purchase Price (₹)</label>
                         <input
                             type="number"
                             id="purchasePrice"
+                            name="purchasePrice"
                             min="0"
                             step="0.01"
-                            placeholder="Example: 60000"
-                            required
+                            placeholder="Leave blank if unknown"
                         >
-
+                        <small>Optional. Enter the original price if you know it.</small>
                     </div>
 
-
                     <div class="form-group">
-
-                        <label for="currentValue">
-                            Current Estimated Value (₹) *
-                        </label>
-
+                        <label for="currentValue">Current Estimated Value (₹)</label>
                         <input
                             type="number"
                             id="currentValue"
+                            name="currentValue"
                             min="0"
                             step="0.01"
-                            placeholder="Example: 25000"
-                            required
+                            placeholder="Leave blank if unknown"
                         >
-
+                        <small>Optional. Do not guess the current market value.</small>
                     </div>
 
-
                     <div class="form-group">
-
-                        <label for="repairCost">
-                            Estimated Repair Cost (₹) *
-                        </label>
-
+                        <label for="repairCost">Estimated Repair Cost (₹)</label>
                         <input
                             type="number"
                             id="repairCost"
+                            name="repairCost"
                             min="0"
                             step="0.01"
-                            placeholder="Example: 5000"
-                            required
+                            placeholder="Leave blank if unknown"
                         >
-
+                        <small>
+                            Optional. If the fault is unknown, get a diagnosis
+                            and quotation from a technician.
+                        </small>
                     </div>
-
                 </div>
-
             </div>
 
-
-            <!-- INFORMATION -->
-
+            <!-- INFORMATION NOTE -->
             <div class="assessment-note">
-
                 <span>💡</span>
-
                 <div>
-
                     <strong>How does EcoCycle decide?</strong>
-
                     <p>
-                        Your device information is evaluated using
-                        multiple factors including condition, age,
-                        repair cost, current value and remaining
-                        useful life.
+                        EcoCycle considers device information, condition, age,
+                        your description, and available cost information.
+                        If the fault or repair cost is unknown, the system
+                        should recommend diagnosis rather than inventing a price
+                        or confirmed technical fault.
                     </p>
-
                 </div>
-
             </div>
-
-
-            <!-- MESSAGE -->
 
             <div
                 id="assessmentMessage"
-                class="assessment-message">
-            </div>
-
-
-            <!-- SUBMIT -->
+                class="assessment-message"
+                role="status"
+                aria-live="polite"
+            ></div>
 
             <div class="assessment-submit">
-
                 <button
                     type="submit"
                     id="assessmentButton"
-                    class="assessment-button">
-
+                    class="assessment-button"
+                >
                     Analyze My Device →
-
                 </button>
-
             </div>
 
         </form>
-
     </section>
-
 </main>
 
-
-<!-- FOOTER -->
-
 <footer>
-
-    <div class="footer-logo">
-        EcoCycle Intelligence
-    </div>
-
-    <p>
-        Building a smarter and more sustainable approach
-        to electronic waste.
-    </p>
-
-    <p class="copyright">
-        © 2026 EcoCycle Intelligence.
-        All rights reserved.
-    </p>
-
+    <div class="footer-logo">EcoCycle Intelligence</div>
+    <p>Building a smarter and more sustainable approach to electronic waste.</p>
+    <p class="copyright">© 2026 EcoCycle Intelligence. All rights reserved.</p>
 </footer>
 
-
 <script src="js/assessment.js"></script>
-
 </body>
 </html>

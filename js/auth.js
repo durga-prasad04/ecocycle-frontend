@@ -1,166 +1,95 @@
-// ============================================
-// ECOCYCLE LOGIN
-// ============================================
+
+ // ============================================
+ // ECOCYCLE LOGIN
+ // ============================================
 
 const loginForm = document.getElementById("loginForm");
 
 if (loginForm) {
+    loginForm.addEventListener("submit", async function (event) {
+        event.preventDefault();
 
-    loginForm.addEventListener(
-        "submit",
-        async function (event) {
+        const email = document.getElementById("email").value.trim();
+        const password = document.getElementById("password").value;
+        const message = document.getElementById("loginMessage");
+        const button = loginForm.querySelector("button");
 
-            event.preventDefault();
+        message.textContent = "";
 
-            const email =
-                document.getElementById("email")
-                    .value.trim();
+        // VALIDATION
+        if (!email || !password) {
+            message.textContent = "Please enter your email and password.";
+            return;
+        }
 
-            const password =
-                document.getElementById("password")
-                    .value;
+        button.disabled = true;
+        button.textContent = "Logging in...";
 
-            const message =
-                document.getElementById("loginMessage");
+        try {
+            const response = await fetch(
+                "https://ecocycle-backend-wakg.onrender.com/api/auth/login",
+                {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify({
+                        email: email,
+                        password: password
+                    })
+                }
+            );
 
-            const button =
-                loginForm.querySelector("button");
+            const responseText = await response.text();
 
+            let data;
 
-            message.textContent = "";
+            try {
+                data = JSON.parse(responseText);
+            } catch {
+                data = responseText;
+            }
 
-
-            // =================================
-            // VALIDATION
-            // =================================
-
-            if (!email || !password) {
-
+            // LOGIN FAILED
+            if (!response.ok) {
                 message.textContent =
-                    "Please enter your email and password.";
-
+                    typeof data === "string"
+                        ? data
+                        : "Invalid email or password.";
                 return;
             }
 
+            // LOGIN SUCCESSFUL
+            console.log("Login successful:", data);
 
-            button.disabled = true;
-            button.textContent = "Logging in...";
+            localStorage.setItem(
+                "ecocycleUser",
+                JSON.stringify(data)
+            );
 
+            message.textContent =
+                "Login successful! Redirecting...";
 
-            try {
-
-                const response = await fetch(
-                    "http://localhost:8080/api/auth/login",
-                    {
-                        method: "POST",
-
-                        headers: {
-                            "Content-Type":
-                                "application/json"
-                        },
-
-                        body: JSON.stringify({
-                            email: email,
-                            password: password
-                        })
-                    }
-                );
-
-
-                const responseText =
-                    await response.text();
-
-
-                let data;
-
-                try {
-
-                    data =
-                        JSON.parse(responseText);
-
-                } catch {
-
-                    data =
-                        responseText;
-
+            // ROLE-BASED REDIRECT
+            setTimeout(function () {
+                if (
+                    data.role &&
+                    data.role.toUpperCase() === "ADMIN"
+                ) {
+                    window.location.href = "admin.html";
+                } else {
+                    window.location.href = "dashboard.html";
                 }
+            }, 800);
 
+        } catch (error) {
+            console.error("Login error:", error);
 
-                // =================================
-                // LOGIN FAILED
-                // =================================
-
-                if (!response.ok) {
-
-                    message.textContent =
-                        typeof data === "string"
-                            ? data
-                            : "Invalid email or password.";
-
-                    return;
-                }
-
-
-                // =================================
-                // LOGIN SUCCESSFUL
-                // =================================
-
-                console.log(
-                    "Login successful:",
-                    data
-                );
-
-
-                // Save complete login information
-
-                localStorage.setItem(
-                    "ecocycleUser",
-                    JSON.stringify(data)
-                );
-
-
-                message.textContent =
-                    "Login successful! Redirecting...";
-
-
-                // =================================
-                // ROLE-BASED REDIRECT
-                // =================================
-
-                setTimeout(function () {
-
-                    if (
-                        data.role &&
-                        data.role.toUpperCase() === "ADMIN"
-                    ) {
-
-                        window.location.href =
-                            "admin.html";
-
-                    } else {
-
-                        window.location.href =
-                            "dashboard.html";
-                    }
-
-                }, 800);
-
-
-            } catch (error) {
-
-                console.error(
-                    "Login error:",
-                    error
-                );
-
-                message.textContent =
-                    "Unable to connect to the server. Make sure the backend is running.";
-
-            } finally {
-
-                button.disabled = false;
-                button.textContent = "Login";
-            }
+            message.textContent =
+                "Unable to connect to the server. Please try again.";
+        } finally {
+            button.disabled = false;
+            button.textContent = "Login";
         }
-    );
+    });
 }

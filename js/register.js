@@ -119,7 +119,7 @@ if (registerForm) {
                 // =================================
 
                 const response = await fetch(
-                    "http://localhost:8080/api/users",
+                    "https://ecocycle-backend-wakg.onrender.com/api/users",
                     {
                         method: "POST",
 

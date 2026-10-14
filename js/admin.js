@@ -2,7 +2,7 @@
 // ECOCYCLE ADMIN DASHBOARD
 // ============================================
 
-const API_BASE_URL = "http://localhost:8080";
+const API_BASE_URL = "https://ecocycle-backend-wakg.onrender.com";
 
 
 // ============================================

@@ -53,7 +53,7 @@ async function loadCenters() {
     try {
 
         const response = await fetch(
-            "http://localhost:8080/api/centers"
+            "https://ecocycle-backend-wakg.onrender.com/api/centers"
         );
 
         if (!response.ok) {
@@ -119,7 +119,7 @@ async function searchCenters() {
     try {
 
         let url =
-            "http://localhost:8080/api/centers";
+            "https://ecocycle-backend-wakg.onrender.com/api/centers";
 
 
         // Type + City
@@ -129,7 +129,7 @@ async function searchCenters() {
         ) {
 
             url =
-                `http://localhost:8080/api/centers/type/${encodeURIComponent(type)}/city/${encodeURIComponent(city)}`;
+                `https://ecocycle-backend-wakg.onrender.com/api/centers/type/${encodeURIComponent(type)}/city/${encodeURIComponent(city)}`;
 
         }
 
@@ -139,7 +139,7 @@ async function searchCenters() {
         ) {
 
             url =
-                `http://localhost:8080/api/centers/type/${encodeURIComponent(type)}`;
+                `https://ecocycle-backend-wakg.onrender.com/api/centers/type/${encodeURIComponent(type)}`;
 
         }
 
@@ -149,7 +149,7 @@ async function searchCenters() {
         ) {
 
             url =
-                `http://localhost:8080/api/centers/city/${encodeURIComponent(city)}`;
+                `https://ecocycle-backend-wakg.onrender.com/api/centers/city/${encodeURIComponent(city)}`;
 
         }
 
